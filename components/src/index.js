@@ -1,13 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import faker from 'faker'
 import CommentDetail from './CommentDetails'
 
 const App = () =>{
     return (
         <div className="ui container comments">
-            <CommentDetail author="Sam" />
-            <CommentDetail author="John" />
-            <CommentDetail author="Jane" />
+            <CommentDetail author="Sam" timeAgo="Today at 6.00PM" content="Nice blog post" 
+            avatar={faker.image.avatar()} />
+            <CommentDetail author="John" timeAgo="Today at 4.30PM" content="I like the post" 
+            avatar={faker.image.avatar()} />
+            <CommentDetail author="Jane" timeAgo="Yesterday at 8.00PM" content="I like the writing" 
+            avatar={faker.image.avatar()} />
         </div>
     );
 }
