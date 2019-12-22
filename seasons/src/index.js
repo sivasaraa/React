@@ -17,11 +17,12 @@ class App extends React.Component{
     }
 
     render(){
+        if(this.state.lat && !this.state.errmsg)
+            return <div>Latitiude : {this.state.lat}</div>
+        if(this.state.errmsg && !this.state.lat)
+            return <div>Error: {this.state.errmsg}</div>
         return (
-            <div>Latitude : {this.state.lat}
-            <br />
-            Error : {this.state.errmsg}
-            </div>
+            <div>Loading</div>
         );
     }
 }
