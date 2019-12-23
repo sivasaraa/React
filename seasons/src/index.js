@@ -5,14 +5,12 @@ class App extends React.Component{
     constructor(props){
         super(props);
         this.state = { lat : null, errmsg : ''}
+    }
 
+    componentDidMount(){
         window.navigator.geolocation.getCurrentPosition(
-            (position) => {
-                this.setState({lat : position.coords.latitude})
-            },
-            (err) => {
-                this.setState({errmsg : err.message})
-            }
+            position => this.setState({lat : position.coords.latitude}),
+            err => this.setState({errmsg : err.message})
         );
     }
 
